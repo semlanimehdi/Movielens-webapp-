@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+        <title>Genre</title> 
+        <link rel="stylesheet" href="./static/css/style.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    	<link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    
+    </head>
+    <body> 
+        <nav class="navbar navbar-dark bg-dark navbar-expand-sm fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="./">Movies Lens</a>
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item "><a href="./" class="nav-link"><span class="fa fa-home fa-lg"></span>Home</a></li>
+                        <li class="nav-item"><a href="users" class="nav-link">Users</a></li>
+                        <li class="nav-item"><a href="./action" class="nav-link">Genres</a></li>
+                    </ul>
+                </div>
+            </div> 
+        </nav>
+
+
+        <header class="jumbotron mt-5">
+            <div class="container">
+                <div class="row row-header">
+                    <div class="col-12 col-md-6">
+                        <h1>MoviesLens</h1>
+                        <h4>Here, you find all your favourite movies</h4>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <table class="table table-striped  table-dark mr-auto">
+                            <tbody>
+                                <tr>
+                                    <th><a href="/action" ><button class="btn btn-outline-warning">Action</button></a></th>
+                                    <th><a href="/adventure"><button  class="btn btn-outline-light">Adventure</button></a></th>
+                                    <th><a href="/animation" , class="action "><button class="btn btn-outline-warning">Animation</button></a></th>
+                                    <th><a href="/children" , class="action "><button class="btn btn-outline-light">Children's</button></a></th>
+                                    <th><a href="comedy" , class="action "><button class="btn btn-outline-warning">Comedy</button></a></th>
+                                    <th><a href="/crime" , class="action "><button  class="btn btn-outline-light">Crime</button></a></th>
+                                </tr>
+                                <tr>
+                                    <th><a href="/documentary" , class="action "><button class="btn btn-outline-light">Documentary</button></a></th>
+                                    <th><a href="/drama" , class="action "><button class="btn btn-outline-warning">Drama</button></a></th>
+                                    <th><a href="/fantasy" , class="action "><button class="btn btn-outline-light">Fantasy</button></a></th>
+                                    <th><a href="/filmNoir" , class="action "><button class="btn btn-outline-warning">Film-Noir</button></a></th>
+                                    <th><a href="/horror" , class="action "><button class="btn btn-outline-light">Horror</button></a></th>
+                                    <th><a href="/musical" , class="action "><button class="btn btn-outline-warning">Musical</button></a></th>
+                                </tr>
+                                <tr>
+                                    <th><a href="/mystery" , class="action "><button class="btn btn-outline-light">Mystery</button></a></th>
+                                    <th><a href="/romance" , class="action "><button class="btn btn-outline-warning">Romance</button></a></th>
+                                    <th><a href="/scifi" , class="action "><button class="btn btn-outline-light">Sci-Fi</button></a></th>
+                                    <th><a href="/thriller" , class="action "><button class="btn btn-outline-warning">Thriller</button></a></th>
+                                    <th><a href="/war" , class="action "><button class="btn btn-outline-light">War</button></a></th>
+                                    <th><a href="/western" , class="action "><button class="btn btn-outline-warning">Western</button></a></th>
+    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>   
+                    
+                </div>
+            </div>
+        </header>
+
+
+       <div class="container">
+
+            <!-- Table Content-->
+            <div class="row row-content">
+                <div class="col-12">
+                <h2 class="offset-2 offset-md-5 col-12 mb-3">TOP CHILDREN MOVIES</h2>
+                <div class="table-responsive">
+                    
+                    <table class="table table-striped mr-auto">
+                        <caption>Movies</caption>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Movie Id</th>
+                                <th>Title</th>
+                                <th>avg rating</th>
+                                <th>rating count </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tbody>
+                                {% for movie in children [:99]%}
+    
+                                <tr class="table-secondary">
+                                    <td>{{movie.movieId}}</td>
+                                    <td>{{movie.title}}</td>
+                                    <td>{{movie.avg_rating}}</td>
+                                    <td>{{movie.rating_count}}</td>
+
+                                </tr>
+                                
+                                 {% endfor %}  
+                            </tbody>
+                        </tbody>
+                        
+                    </table>
+                </div>
+                
+                </div>
+                
+            </div>
+       </div>
+       <footer class="footer" style="background-color: #DCDCDC;">
+        <div class="container">
+            <div class="row">             
+                <div class="col-4 offset-1 col-sm-2">
+                    <br>
+                    <br>
+                    <h5>Realised by</h5>
+                    <ul class="list-unstyled">
+                        <li><span class="badge badge-danger">BE:</span><a href="#" target="_blank">Moahmed Mehdi Semlani</a></li>
+                        <li><span class="badge badge-primary">DA:</span><a href="#" target="_blank">Moahmed Mehdi Semlani</a></li>
+                        <li><span class="badge badge-danger">BE:</span><a href="https://www.linkedin.com/in/mohammed-mehdi-semlani-34265023b/" target="_blank">Moahmed Mehdi Semlani</a></li>
+                    </ul>
+                </div>
+               
+           </div>
+           <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p>© Copyright 2023 MOHAMMED MEHDI SEMLANI</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+    </body>
+ 
+ 
+ 
+</html>
